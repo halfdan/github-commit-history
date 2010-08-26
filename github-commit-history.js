@@ -5,7 +5,8 @@
 			repo: "github-commit-history",
 			branch: "master",
 			limit: 50,
-			gravatar_size: 40
+			offset: 0,
+			gravatar_size: 50
 		};
 
 		var options = $.extend(defaults, options);
@@ -23,8 +24,13 @@
 
 				$.each(data.commits, function(idx, commit) {
 					
+					// Don't show the first "offset" entries.
+					if(idx < options["offset"]) {
+						return true;
+					}
+					
 					// Break out of .each of we've reached our limit.
-					if(idx == options["limit"]) {
+					if(idx == options["limit"] + options["offset"]) {
 						return false;
 					}
 

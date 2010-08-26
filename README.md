@@ -16,9 +16,16 @@ Have a look at the demo to see how it works. You can have multiple listings on a
 The file "_commit.html" works as a template. It uses mustache.js to apply the values to the template.
 
 
+Features
+--------
+
+* Paging (using offset)
+* Limiting (using limit)
+* Change appearance using a simple template + CSS.
+
+
 ToDo
 ----
 
 * Simplify usage
 * Provide minified version of the library
-* Provide paging / limiting
