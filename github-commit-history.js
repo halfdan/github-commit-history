@@ -4,7 +4,7 @@
 			username: "halfdan",
 			repo: "github-commit-history",
 			branch: "master",
-			count: 10,
+			limit: 50,
 			gravatar_size: 40
 		};
 
@@ -22,6 +22,11 @@
 			jQuery.getJSON("http://github.com/api/v2/json/commits/list/" + options["username"] + "/" + options["repo"] + "/" + options["branch"] + "?callback=?", function(data) {
 
 				$.each(data.commits, function(idx, commit) {
+					
+					// Break out of .each of we've reached our limit.
+					if(idx == options["limit"]) {
+						return false;
+					}
 
 					commit = $.extend(commit, options);
 
