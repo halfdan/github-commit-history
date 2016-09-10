@@ -4,7 +4,7 @@
 			username: "halfdan",
 			repo: "github-commit-history",
 			branch: "master",
-			limit: 50,
+			limit: 5,
 			offset: 0,
 			gravatar_size: 50
 		};
@@ -18,12 +18,11 @@
 			var template;
 			$.get('_commit.html', function(data) {
 				template = data;
-			});
+			}, 'text');
 
-			jQuery.getJSON("http://github.com/api/v2/json/commits/list/" + options["username"] + "/" + options["repo"] + "/" + options["branch"] + "?callback=?", function(data) {
+			jQuery.getJSON("https://api.github.com/repos/" + options["username"] + "/" + options["repo"] + "/commits", function(data) {
 
-				$.each(data.commits, function(idx, commit) {
-					
+				$.each(data, function(idx, commit) {
 					// Don't show the first "offset" entries.
 					if(idx < options["offset"]) {
 						return true;
@@ -35,11 +34,11 @@
 					}
 
 					commit = $.extend(commit, options);
-
 					// Generate gravatar ID
-					commit.author.gravatar_id = $.md5(commit.author.email.toLowerCase());
+					commit.commit.author.gravatar_id = $.md5(commit.commit.author.email.toLowerCase());
+					commit.commit.author.gravatar_size = options["gravatar_size"];
 
-					var html = Mustache.to_html(template, commit);
+					var html = Mustache.render(template, commit);
 					obj.append(html);
 				});
 			});

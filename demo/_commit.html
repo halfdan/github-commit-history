@@ -1,20 +1,14 @@
-<div class="commit">      
-  <div class="message">
-    <pre>
-      <a href="http://www.github.com/{{username}}/{{repo}}/commit/{{id}}">{{message}}</a>
-    </pre>
-  </div>
+<div class="commit">
   <div class="author">
-    {{#author}}
     <div class="gravatar">          
-      <img src="http://www.gravatar.com/avatar/{{gravatar_id}}?s={{gravatar_size}}" alt="" width="30" height="30"  />
+      <img src="http://www.gravatar.com/avatar/{{commit.author.gravatar_id}}?s={{commit.author.gravatar_size}}" alt="" width="{{commit.author.gravatar_size}}" height="{{commit.author.gravatar_size}}"  />
     </div>
-    <div class="name"><a href="http://www.github.com/{{login}}">{{name}}</a> <span>(author)</span></div>
-    {{/author}}
+    <div class="name"><a href="https://www.github.com/{{author.login}}">{{commit.author.name}}</a></div>
     <div class="date">
-      <abbr class="relatize" title="{{authored_date}}">{{authored_date}}</abbr>
+      <abbr class="relatize" title="{{commit.author.date}}">{{commit.author.date}}</abbr>
     </div>
+  </div>
+  <div class="message">
+      <a href="{{commit.html_url}}">{{commit.message}}</a>
   </div>
 </div>
-
-

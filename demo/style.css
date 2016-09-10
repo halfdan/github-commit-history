@@ -1,45 +1,63 @@
 .commit {
-  background: #EAF2F5;
-  border-bottom:1px solid #BEDCE7;
-  border-left:1px solid #BEDCE7;
-  border-right:1px solid #BEDCE7;
-  overflow:hidden;
-  padding:0 0.7em 0.7em;
+    background: #EAF2F5;
+    border-bottom: 1px solid #BEDCE7;
+    border-left: 1px solid #BEDCE7;
+    border-right: 1px solid #BEDCE7;
+    overflow: hidden;
+    padding: 0 0.7em 0.7em 5em;
+    position: relative;
+}
+
+.commit:first-child {
+    border-top: 1px solid #BEDCE7;
+}
+
+.commit a {
+    text-decoration: none;
+}
+
+.commit a:hover {
+    text-decoration: underline;
+}
+
+.commit .author {
+    margin-top: 0.7em;
 }
 
 .commit .author .name {
-  line-height:1.5em;
+    line-height: 1.5em;
 }
 
 .commit .author .date {
-  color:#888888;
-  font-size:90%;
-  line-height:1em;
+    color: #888888;
+    font-size: 90%;
+    line-height: 1em;
 }
 
 .commit .author .gravatar {
- background-color:white;
-  border:1px solid #D0D0D0;
-  float:left;
-  margin-right:0.7em;
-  padding:2px;
+    background-color: white;
+    border: 1px solid #D0D0D0;
+    position: absolute;
+    padding: 2px;
+    top: 0.7em;
+    left: 0.7em;
 }
 
 .commit .message {
-  font-family:Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
-  font-size:80%;
+    font-family: Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+    font-size: 80%;
+    float: left;
 }
 
-.commit .message pre {
-  white-space:pre-wrap;
-  word-wrap:break-word;
-  font:12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
+.commit .message a {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font: 12px Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+    color: blue;
+    line-height: 1.4em;
 }
 
-.commit .message pre a, .commit .author .name a {
-  color: #000000;
-}
-
-body * {
-  line-height:1.4em;
+.commit .message pre a,
+.commit .author .name a {
+    color: #000000;
 }
