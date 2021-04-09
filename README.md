@@ -5,6 +5,10 @@ This library can be used to display the latest X commits on a repository. It use
 
 The default styling is similar to what Github displays in the commit log. 
 
+Demo
+-----
+https://github-history.dwz.ee/demo.html
+![](https://cdn.youjb.com/images/2016/09/10/2016-09-1014.20.47.jpg)
 
 Usage
 -----

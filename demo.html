@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Github Commit History Demo</title>
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="commitHistory"></div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.md5.js"></script>
+	<script type="text/javascript" src="js/mustache.js"></script>
+	<script type="text/javascript" src="js/github-commit-history.js"></script>
+	<script type="text/javascript">
+	$(function() {
+		$('#commitHistory').GithubCommitHistory( {
+			username: "halfdan",
+			repo: "github-commit-history",
+			limit: 5, 
+			offset: 0
+		})
+	});
+	</script>
+</body>
+</html>
